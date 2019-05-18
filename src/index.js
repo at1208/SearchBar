@@ -6,7 +6,7 @@ import SearchBar from './components/searchBar';
 import ImageList from './components/imageList'
 
 class App extends Component {
-    state={ image: [] }
+    state={ image: [] , error:''}
 
      onSearch = term => {
       axios.get('https://api.unsplash.com/search/photos', {
@@ -21,11 +21,22 @@ class App extends Component {
 
   render(){
     console.log(this.state.image)
-  return <div>
-        <SearchBar onEnter={this.onSearch} />
-         <div style={{ paddingLeft:280}}> Found:{`${this.state.image.length} Results`} </div>
-         <ImageList data={this.state.image}/>
-         </div>
+   if(!this.state.image && this.state.error){
+     return <div>Error found : {this.state.error} </div>
+   }
+   if(!this.state.image && !this.state.error ){
+     return <div className="spinner-border" role="status">
+   <span className="sr-only">Loading...</span>
+ </div>
+   }
+   else{
+     return <div>
+           <SearchBar onEnter={this.onSearch} />
+            <div style={{ paddingLeft:280}}> Found:{`${this.state.image.length} Results`} </div>
+            <ImageList data={this.state.image}/>
+            </div>
+
+   }
   }
 }
 ReactDOM.render(<App />, document.getElementById('root'));

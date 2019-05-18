@@ -25,7 +25,7 @@ constructor(props){
                            marginRight:280,
                            borderRadius: '10px',
                            padding: '20px',
-                           backgroundColor:'skyblue',
+                           backgroundColor:'MediumSlateBlue	',
                            border:'1px solid black' }} >
 
              <form onSubmit={this.onFormSubmit} >
