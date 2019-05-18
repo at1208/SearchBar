@@ -8,7 +8,7 @@ constructor(props){
 }
   onFormSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state.term)
+    this.props.onEnter(this.state.term)
 }
 
   onInputChange = (e) => {
@@ -16,12 +16,14 @@ constructor(props){
   console.log(this.state.term)
   }
 
+
   render(){
 
     return <div >
              <div  style={{marginTop:40,
                            marginLeft:280,
                            marginRight:280,
+                           borderRadius: '100px',
                            padding: '20px',
                            backgroundColor:'skyblue',
                            border:'1px solid black' }} >
