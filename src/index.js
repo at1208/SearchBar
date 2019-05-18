@@ -6,7 +6,7 @@ import SearchBar from './components/searchBar';
 
 class App extends Component {
     state={ image: [] }
-    
+
      onSearch = (term)=> {
       axios.get('https://api.unsplash.com/search/photos',{
         params: { query: term },
