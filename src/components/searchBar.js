@@ -23,7 +23,7 @@ constructor(props){
              <div  style={{marginTop:40,
                            marginLeft:280,
                            marginRight:280,
-                           borderRadius: '100px',
+                           borderRadius: '10px',
                            padding: '20px',
                            backgroundColor:'skyblue',
                            border:'1px solid black' }} >
